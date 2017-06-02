@@ -42,9 +42,11 @@
 
   <target name="prepare" depends="clean"
           description="Create working dirs and copy static files to work dir">
-    <mkdir  dir="/opt/demo/ant/helloworld/dist"/>
-    <mkdir  dir="${dist.home}"/>
-    <mkdir  dir="${work.home}/WEB-INF/classes"/>
+   <echo>Creating ${buildRequesterUserId} folder at mirroring site starts</echo>
+<mkdir dir="P:\build_output\${buildRequesterUserId}"/>
+<echo>Creating ${buildRequesterUserId} folder at mirroring site ends</echo> 
+   <mkdir dir="${dist.home}"/>
+    <mkdir dir="${work.home}/WEB-INF/classes"/>
     <!-- Copy static HTML and JSP files to work dir -->
     <copy todir="${work.home}">
       <fileset dir="${web.home}"/>
